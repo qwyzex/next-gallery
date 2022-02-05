@@ -1,13 +1,16 @@
 {
   "name": "gallery-next",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"next dev\" \"next lint\" \"npm run sass\"",
+    "sass": "sass --watch styles/sass:styles/css",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "firebase": "^9.6.4",
     "next": "12.0.9",
     "react": "17.0.2",
     "react-dom": "17.0.2"
@@ -17,6 +20,7 @@
     "@types/react": "17.0.38",
     "eslint": "8.7.0",
     "eslint-config-next": "12.0.9",
+    "sass": "^1.49.0",
     "typescript": "4.5.5"
   }
 }
